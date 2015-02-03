@@ -29,4 +29,16 @@ describe('Game',function(){
     expect(game.score()).toEqual(18);
   });
 
+  it('should be able to correctly score a spare',function(){
+    game.playFrame(6,4);
+    game.playFrame(3,4);
+    expect(game.score()).toEqual(20);
+  });
+
+  it('should be able to correctly score a strike',function(){
+    game.playFrame(10,0);
+    game.playFrame(3,4);
+    expect(game.score()).toEqual(24);
+  });
+
 });
