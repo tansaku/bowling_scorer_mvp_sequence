@@ -26,11 +26,12 @@ describe('Frame',function(){
     expect(frame.nextFrame()).not.toBeUndefined();
     expect(frame.nextFrame().score()).toEqual(9);
   });
- it('should create next next frame when already played',function(){
+
+  it('should create next next frame when already played',function(){
     frame.playFrame(3,4);
     frame.playFrame(6,3);
     frame.playFrame(1,2);
     expect(frame.nextFrame().nextFrame()).not.toBeUndefined();
-    //expect(frame.nextFrame().nextFrame().score()).toEqual(3);
+    expect(frame.nextFrame().nextFrame().score()).toEqual(3);
   });
 });
