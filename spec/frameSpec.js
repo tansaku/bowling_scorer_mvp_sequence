@@ -19,4 +19,18 @@ describe('Frame',function(){
   it('should have an undefined next frame by default',function(){
     expect(frame.nextFrame()).toBeUndefined();
   });
+
+  it('should create next frame when already played',function(){
+    frame.playFrame(3,4);
+    frame.playFrame(6,3);
+    expect(frame.nextFrame()).not.toBeUndefined();
+    expect(frame.nextFrame().score()).toEqual(9);
+  });
+ it('should create next next frame when already played',function(){
+    frame.playFrame(3,4);
+    frame.playFrame(6,3);
+    frame.playFrame(1,2);
+    expect(frame.nextFrame().nextFrame()).not.toBeUndefined();
+    //expect(frame.nextFrame().nextFrame().score()).toEqual(3);
+  });
 });
