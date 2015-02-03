@@ -22,4 +22,11 @@ describe('Game',function(){
     expect(game.score()).toEqual(15);
   });
 
+  it('should be able to play a third frame',function(){
+    game.playFrame(6,2);
+    game.playFrame(3,4);
+    game.playFrame(1,2);
+    expect(game.score()).toEqual(18);
+  });
+
 });
