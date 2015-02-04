@@ -7,8 +7,7 @@ function StrikeFrame(){
 StrikeFrame.prototype = new Frame();
 
 StrikeFrame.prototype.score = function(){
-
-  // we should check if the next frame is a strike ...
+  // we should check if the next frame is a strike ... need isStrike method???
   if(this.nextFrame().roll1 === undefined || this.nextFrame().roll2 === undefined){
     return 0;
   }
