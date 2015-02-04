@@ -1,2 +1,5 @@
-# bowling_scorer_mvp_sequence
-Step by step through a sequence of prototypes of a JavaScript Bowling Scorer
+# Bowling Sorer MVP Sequence
+
+Step by step through a sequence of prototypes of a JavaScript Bowling Scorer 
+
+:construction: UNDER CONSTRUCTION :construction:
