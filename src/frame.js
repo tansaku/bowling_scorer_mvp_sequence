@@ -25,14 +25,19 @@ Frame.prototype.playFrame = function(roll1, roll2){
 };
 
 Frame.prototype._playOnNextEmptyFrame = function(roll1, roll2){
+  var current = this._findCurrentFrame();
+  current.next = new Frame();
+  current.next.playFrame(roll1,roll2);
+};
+
+Frame.prototype._findCurrentFrame = function(){
   var frame = this;
   var current = frame;
   while(frame !== undefined){
     current = frame;
     frame = frame.nextFrame();
   }
-  current.next = new Frame();
-  current.next.playFrame(roll1,roll2);
+  return current;
 };
 
 module.exports = Frame;

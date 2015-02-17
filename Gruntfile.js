@@ -5,7 +5,19 @@ module.exports = function(grunt){
       all: 'spec/'
     },
     jshint:{
-      all: ['Gruntfile.js','spec/**/*.js','src/**/*.js']
+      uses_defaults: ['Gruntfile.js','spec/**/*.js'],
+      with_overrides:{
+        options: {
+          maxstatements: 6,
+          maxlen: 80,
+          maxdepth: 1,
+          maxparams: 2,
+          maxcomplexity: 3
+        },
+        files: {
+          src: ['src/**/*.js']
+        }
+      }
     }
   });
 
